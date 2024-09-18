@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTD Singapore</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            overflow-x: hidden;
+        }
+        .krub-extralight {
+            font-family: "Krub", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .krub-light {
+            font-family: "Krub", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+        .krub-regular {
+            font-family: "Krub", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .krub-medium {
+            font-family: "Krub", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+        }
+        .krub-semibold {
+            font-family: "Krub", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+        .krub-bold {
+            font-family: "Krub", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+        .krub-extralight-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 200;
+            font-style: italic;
+        }
+        .krub-light-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+        }
+        .krub-regular-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .krub-medium-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 500;
+            font-style: italic;
+        }
+        .krub-semibold-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+        }
+        .krub-bold-italic {
+            font-family: "Krub", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+        header {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        img.logo {
+            height: 50px;
+            cursor: pointer;
+        }
+        .menu-button {
+            display: none;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        nav {
+            background: url('images/black.png') repeat-x;
+            border: 0px solid black;
+            width: 100%;
+            position: fixed;
+            top: 60px; /* Adjusted for header height */
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            font: krub-semibold;
+            background: rgba(0, 0, 0, 0.343);
+            border-end-end-radius: 30;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.499);
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            text-align: center;
+        }
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background: #00000079;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+        }
+        .dropdown a {
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown a:hover {
+            background: #141414;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            animation: backgroundChange 30s infinite;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 4em; /* Increased font size for the title */
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+        }
+        @keyframes backgroundChange {
+            0% { background-image: url('images/imagea1.JPG'); opacity: 1; }
+            10% { background-image: url('images/imagea2.JPG'); opacity: 1; }
+            20% { background-image: url('images/imagea3.JPG'); opacity: 1; }
+            30% { background-image: url('images/imagea4.JPG'); opacity: 1; }
+            40% { background-image: url('images/imagea5.JPG'); opacity: 1; }
+            50% { background-image: url('images/imagea6.JPG'); opacity: 1; }
+            60% { background-image: url('images/imagea7.JPG'); opacity: 1; }
+            70% { background-image: url('images/imagea8.JPG'); opacity: 1; }
+            80% { background-image: url('images/imagea9.JPG'); opacity: 1; }
+            90% { background-image: url('images/groupotd.JPG'); opacity: 1; }
+            100% { background-image: url('images/indexbackground.JPG'); opacity: 1; }
+        }
+        .section {
+            padding: 100px 20px; /* Increased padding for larger sections */
+            text-align: center;
+        }
+        .alumni {
+            background-color: #000000;
+            border-bottom: 1px solid #000000;
+            padding: 100px 20px; /* Increased padding for larger sections */
+            position: relative;
+        }
+        .alumni h2 {
+            margin: 0 0 20px;
+            font-size: 2.5em; /* Larger heading */
+        }
+        .alumni-cards {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+        }
+        .alumni-card {
+            flex: 0 0 auto;
+            width: 200px; /* Set the width for the card */
+            background-color: #7d7d7d;
+            border: 1px solid #3f3f3f;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            scroll-snap-align: start;
+            transition: transform 0.3s;
+        }
+        .alumni-card:hover {
+            transform: scale(1.05);
+        }
+        .alumni-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .alumni-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2em;
+        }
+        
+        .alumni-card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .arrow-circle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: rgb(255, 255, 255);
+            border: 2px solid #000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .arrow-circle.left {
+            left: 10px;
+        }
+        .arrow-circle.right {
+            right: 10px;
+        }
+        .contact, .socials {
+            background-color: #000000;
+            border-bottom: 1px solid #000000;
+            padding: 100px 20px;
+        }
+        .contact p, .socials p {
+            margin: 0;
+            color: #fff;
+            font-size: 1.2em;
+        }
+        .socials a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        #player-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards in the container */
+}
+
+.player-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 5px; /* Reduce padding */
+    margin: 0; /* Remove default margin */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.player-card img {
+    max-width: 100%; /* Ensure images fit within the card */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+}
+
+.player-card h3, .player-card p {
+    margin: 5px 0; /* Adjust margins to reduce space */
+    text-align: center; /* Center text */
+}
+
+w
+
+        footer {
+            background-color: #000000;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        #search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        #search-input {
+            padding: 10px;
+            width: 300px;
+            font-size: 1em;
+        }
+        #player-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .player-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            background: #fff;
+        }
+        .player-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .player-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .player-card h3 {
+            margin: 10px 0;
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .menu-button {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+            nav.active ul {
+                display: flex;
+            }
+            .alumni-cards {
+                flex-direction: column;
+            }
+            .arrow-circle.left, .arrow-circle.right {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+
+        <nav>
+            <ul>
+                <li><img src="images/court-removebg.png" alt="Logo" class="logo" onclick="window.location.href='index.html';"></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li>
+                    <a href="roster.html">Members</a>
+                    <div class="dropdown">
+                        <a href="#">Players</a>
+                        <a href="#">Coaching Staff</a>
+                        <a href="#">Roster</a>
+                    </div>
+                </li>
+                <li><a href="sponsors.html">Try Out</a></li>
+                <li><a href="links.html">Camps/Clinic</a></li>
+                <li><a href="links.html">USA Summer Tour</a></li>
+                <li><a href="links.html">College Contacts</a></li>
+                <li><a href="links.html">Merch Store</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>#WEALLWEGOT</h1>
+    </div>
+
+    <div class="container">
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Search for players...">
+        </div>
+        <div id="player-list">
+            <!-- Player cards will be injected here by JavaScript -->
+        </div>
+    </div>
+
+   
+
+    <section class="contact">
+        <p>Contact Us: email@example.com</p>
+    </section>
+
+    <section class="socials">
+        <p>Follow Us: 
+            <a href="#" target="_blank">Facebook</a> 
+            <a href="#" target="_blank">Instagram</a>
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2024 OTD Singapore Basketball Club. All rights reserved.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const players = [
+                { name: "Charlie Davis", position: "U12/U14", image: "images/charlie_davis.jpg", page: "zcharlie_davis.html" },
+                { name: "Vishikan Chidambaram", position: "U12", image: "images/vishikan_chidambaram.jpg", page: "zvishikan_chidambaram.html" },
+                { name: "Jackson Manalac", position: "U12", image: "images/jackson_manalac.jpg", page: "zjackson_manalac.html" },
+                { name: "Travis Aseniero", position: "U12", image: "images/travis_aseniero.jpg", page: "ztr.html" },
+                { name: "Aman Oberoi", position: "U12", image: "images/aman_oberoi.jpg", page: "zaman_oberoi.html" },
+                { name: "Blake Yang", position: "U12/U14", image: "images/blake_yang.jpg", page: "zblake_yang.html" },
+                { name: "Simon Jancinto", position: "U12", image: "images/simon_jacinto.jpg", page: "zsimon_jacinto.html" },
+                { name: "Karsten Lin", position: "U12", image: "images/karsten_lin.jpg", page: "zkarsten_lin.html" },
+                { name: "Louis Johnson", position: "U12", image: "images/louis_johnson.jpg", page: "zlouis_johnson.html" },
+                { name: "Julian Muncy", position: "U12", image: "images/julian_muncy.jpg", page: "zjulian_muncy.html" },
+                { name: "Jack Lin", position: "U12", image: "images/jack_lin.jpg", page: "zjack_lin.html" },
+                { name: "Kenshin Ezaki", position: "U12", image: "images/kenshin_ezaki.jpg", page: "zkenshin_ezaki.html" },
+                { name: "Jai Bhargava", position: "U14/U16/U18", image: "images/jai_bhargava.jpg", page: "zjai_bhargava.html" },
+                { name: "Vihaan Verma", position: "U14/U16", image: "images/vihaan_verma.jpg", page: "zvihaan_verma.html" },
+                { name: "Vedang Gupta", position: "U14", image: "images/vedang_gupta.jpg", page: "zvedang_gupta.html" },
+                { name: "Marcus Tao", position: "U14", image: "images/marcus_tao.jpg", page: "zmarcus_tao.html" },
+                { name: "Tyson Teo", position: "U14", image: "images/tyson_teo.jpg", page: "ztyson_teo.html" },
+                { name: "Mukesh Muthaiya", position: "U14", image: "images/mukesh_muthaiya.jpg", page: "zmukesh_muthaiya.html" },
+                { name: "Divesh Sivamaran", position: "U14", image: "images/divesh_sivamaran.jpg", page: "zdivesh_sivamaran.html" },
+                { name: "Nihal Kumar", position: "U14", image: "images/nihal_kumar.jpg", page: "znihal_kumar.jpg.html" },
+                { name: "Aiden Sheng", position: "U14", image: "images/aiden_sheng.jpg", page: "zaiden_sheng.html" },
+                { name: "Jackson Muncy", position: "U14", image: "images/jackson_muncy.jpg", page: "zjackson_muncy.html" },
+                { name: "Ronan McKenzie", position: "U14", image: "images/ronan_mckenzie.jpg", page: "zronan_mckenzie.html" },
+                { name: "Ciaran McKenzie", position: "U14", image: "images/ciaran_mckenzie.jpg", page: "zciaran_mckenzie.html" },
+                { name: "Raaghaav Agarwal", position: "U14", image: "images/raaghav_agarwal.jpg", page: "zraaghav_agarwal.html" },
+                { name: "Mihir Aniruddha", position: "U14", image: "images/mihir_aniruddha.jpg", page: "zmihir_aniruddha.html" },
+                { name: "Aharsi Mukherji", position: "U14", image: "images/aharsi_mukherji.jpg", page: "zaharsi_mukherji.html" },
+                { name: "Viraaj Dadhwal", position: "U14", image: "images/viraaj_dadhwal.jpg", page: "zviraaj_dadhwal.html" },
+                { name: "Tanmay Rajesh", position: "U14", image: "images/tanmay_rajesh.jpg", page: "ztanmay_rajesh.html" },
+                { name: "Kirk Jacinto", position: "U14", image: "images/kirk_jacinto.jpg", page: "zkirk_jacinto.html" },
+                { name: "Owen Kyaw", position: "U14", image: "images/owen_kyaw.jpg", page: "zkowen_kyaw.html" },
+                { name: "Luca Bogaert", position: "U14", image: "images/luca_bogaert.jpg", page: "zluca_bogaert.html" },
+                { name: "Gerard Tan", position: "U16/U18", image: "images/gerard_tan.jpg", page: "zgerard_tan.html" },
+                { name: "Kostya Yashenkov", position: "U14/U16", image: "images/kostya_yashenkov.jpg", page: "zkostya_yashenkov.html" },
+                { name: "Raphael Padilla", position: "U14", image: "images/raphael_padilla.jpg", page: "zraphael_padilla.html" },
+                { name: "Ananth Rao", position: "U14", image: "images/ananth_rao.jpg", page: "zananth_rao.html" },
+                { name: "Andrew Ahlberg", position: "U14", image: "images/andrew_ahlberg.jpg", page: "zandrew_ahlberg.html" },
+                { name: "Marin El'Iman", position: "U14", image: "images/marin_eliman.jpg", page: "zmarin_eliman.html" },
+                { name: "Neil Verma", position: "U14/U16", image: "images/neil_verma.jpg", page: "zneil_verma.html" },
+                { name: "Duha Ashiq", position: "U14", image: "images/duha_ashiq.jpg", page: "zduha_ashiq.html" },
+                { name: "Raghav Budhraja", position: "U14", image: "images/raghav_budhraja.jpg", page: "zraghav_budhraja.html" },
+                { name: "Aryan Jha", position: "U14", image: "images/aryan_jha.jpg", page: "zaryan_jha.html" },
+                { name: "Atticus Rao", position: "U16/U18", image: "images/atticus_rao.jpg", page: "zatticus_rao.html" },
+                { name: "Mikael Emran", position: "U16/U18", image: "images/mikael_emran.jpg", page: "zmikael_emran.html" },
+                { name: "Aditya Mittal", position: "U16", image: "images/aditya_mittal.jpg", page: "zaditya_mittal.html" },
+                { name: "Uday Lyer", position: "U16", image: "images/uday_lyer.jpg", page: "zuday_lyer.html" },
+                { name: "Imran Kapasi", position: "U16/U18", image: "images/imran_kapasi.jpg", page: "zimran_kapasi.html" },
+                { name: "Armaan Batra", position: "U16/U18", image: "images/armaan_batra.jpg", page: "zarmaan_batra.html" },
+                { name: "Auston Cui", position: "U16/U18", image: "images/auston_cui.jpg", page: "zauston_cui.html" },
+                { name: "Saarth Sohum", position: "U14/U16/U18", image: "images/saarth_sohum.jpg", page: "zsaarth_sohum.html" },
+                { name: "Deyan Han", position: "U16", image: "images/deyan_han.jpg", page: "zdeyan_han.html" },
+                { name: "Andre Escarro", position: "U16", image: "images/andre_escarro.jpg", page: "zandre_escarro.html" },
+                { name: "Lervince Chia", position: "U16", image: "images/lervince_chia.jpg", page: "zlervince_chia.html" },
+                { name: "Steven Lien", position: "U16", image: "images/steven_lien.jpg", page: "zsteven_lien.html" },
+                { name: "Marco Recto", position: "U16", image: "images/marco_recto.jpg", page: "zmarco_recto.html" },
+                { name: "Cavance Sew", position: "U16", image: "images/cavance_sew.jpg", page: "zcavance_sew.html" },
+                { name: "Dhiran Daa", position: "U16", image: "images/dhiran_daa.jpg", page: "zdhiran_daa.html" },
+                { name: "Emmanuel Evangelista", position: "U16", image: "images/emmanuel_evangelista.jpg", page: "zemmanuel_evangelista.html" },
+                { name: "Koh Hong Sin", position: "U16", image: "images/koh_hong_sin.jpg", page: "zkoh_hong_sin.html" },
+                { name: "Armaan Malhotra", position: "U16", image: "images/armaan_malhotra.jpg", page: "zarmaan_malhotra.html" },
+                { name: "Khia Khia", position: "U16", image: "images/khia_khia.jpg", page: "zkhia_khia.html" },
+                { name: "Ashton Lim", position: "U16", image: "images/ashton_lim.jpg", page: "zashton_lim.html" },
+                { name: "Johnathan Edwards", position: "U16", image: "images/johnathan_edwards.jpg", page: "zjohnathan_edwards.html" },
+                { name: "Chris Chen", position: "U16", image: "images/chris_chen.jpg", page: "zchris_chen.html" },
+                { name: "Shrisayh Rathinakumar", position: "U16", image: "images/shrisayh_rathinakumar.jpg", page: "zshrisayh_rathinakumar.html" },
+                { name: "Gan Howard", position: "U16", image: "images/gan_howard.jpg", page: "zgan_howard.html" },
+                { name: "Juan Rufino", position: "U16", image: "images/juan_rufino.jpg", page: "zjuan_rufino.html" },
+                { name: "Martin Khun", position: "U16", image: "images/martin_khun.jpg", page: "zmartin_khun.html" },
+                { name: "Diganth Dharwadkar", position: "U16", image: "images/diganth_dharwadkar.jpg", page: "zdiganth_dharwadkar.html" },
+                { name: "Leonne Reyes", position: "U16", image: "images/leonne_reyes.jpg", page: "zleonne_reyes.html" },
+                { name: "Karl Phau", position: "U18", image: "images/karl_phau.jpg", page: "zkarl_phau.html" },
+                { name: "Caleb D'Souza", position: "U18", image: "images/caleb_dsouza.jpg", page: "zcaleb_dsouza.html" },
+                { name: "Preston Gaines", position: "U16/U18", image: "images/preston_gaines.jpg", page: "zpreston_gaines.html" },
+                { name: "Jess Feuerheerdt", position: "U18", image: "images/jess_feuerheerdt.jpg", page: "zjess_feuerheerdt.html" },
+                { name: "Pravin Kumar", position: "U16/U18", image: "images/pravin_kumar.jpg", page: "zpravin_kumar.html" },
+                { name: "Quan Hoang", position: "U16/U18", image: "images/quan_hoang.jpg", page: "zquan_hoang.html" },
+                { name: "Nikhil Raju", position: "U16/U18", image: "images/nikhil_raju.jpg", page: "znikhil_raju.html" },
+                { name: "Aakash Agarwal", position: "U16/U18", image: "images/aakash_agarwal.jpg", page: "zaakash_agarwal.html" },
+                { name: "Kayden Tan", position: "U16/U18", image: "images/kayden_tan.jpg", page: "zkayden_tan.html" },
+                { name: "Dacius Tan", position: "U16/U18", image: "images/dacius_tan.jpg", page: "zdacius_tan.html" },
+                { name: "Jan Abaya", position: "U16/U18", image: "images/jan_abaya.jpg", page: "zjan_abaya.html" },
+                { name: "Zeting Zhou", position: "U16/U18", image: "images/zeting_zhou.jpg", page: "zzeting_zhou.html" },
+                { name: "Carson Hao", position: "U16/U18", image: "images/carson_hao.jpg", page: "zcarson_hao.html" },
+                { name: "Josh Chew", position: "U16", image: "images/josh_chew.jpg", page: "zjosh_chew.html" },
+                { name: "Rohan Malhotra", position: "U16/U18", image: "images/rohan_malhotra.jpg", page: "zrohan_malhotra.html" },
+                { name: "Victor Lulov", position: "U18", image: "images/victor_lulov.jpg", page: "zvictor_lulov.html" },
+                { name: "Michael Moerler", position: "U18", image: "images/michael_moerler.jpg", page: "zmichael_moerler.html" },
+                { name: "Adi Nivsarkar", position: "U18", image: "images/adi_nivsarkar.jpg", page: "zadi_nivsarkar.html" },
+                { name: "Kai Chong", position: "U18", image: "images/kai_chong.jpg", page: "zkai_chong.html" },
+                { name: "Jin Yu", position: "U18", image: "images/jin_yu.jpg", page: "zjin_yu.html" },
+                { name: "Elton Shou", position: "U18", image: "images/elton_shou.jpg", page: "zelton_shou.html" },
+                { name: "Bryan Chua", position: "U18", image: "images/bryan_chua.jpg", page: "zbryan_chua.html" },
+                { name: "YC Cheng", position: "U18", image: "images/yc_cheng.jpg", page: "yc_cheng.html" },
+                { name: "Taimur Lodhi", position: "U18", image: "images/taimur_lodhi.jpg", page: "ztaimur_lodhi.html" },
+                { name: "Jr Ng", position: "U18", image: "images/jr_ng.jpg", page: "zjr_ng.html" },
+                { name: "Ambala Ayyakkannu", position: "U18", image: "images/ambala_ayyakkannu.jpg", page: "zambala_ayyakkannu.html" },
+                { name: "Jerard Abaya", position: "U18", image: "images/jerard_abaya.jpg", page: "zjerard_abaya.html" },
+                { name: "Daniel Zaw", position: "N/A", image: "images/daniel_zaw.jpg", page: "zdaniel_zaw.html" },
+                { name: "Ivan Mah", position: "U18", image: "images/ivan_mah.jpg", page: "zivan_mah.html" },
+            ];
+
+            // Sort players alphabetically by name
+            players.sort((a, b) => a.name.localeCompare(b.name));
+
+            // Function to create player cards
+            function createPlayerCard(player) {
+                return `
+                    <div class="player-card">
+                        <a href="${player.page}">
+                            <img src="${player.image}" alt="${player.name}">
+                            <h3>${player.name}</h3>
+                            <p>${player.position}</p>
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Render player cards
+            function renderPlayers(players) {
+                const playerList = document.getElementById('player-list');
+                playerList.innerHTML = players.map(createPlayerCard).join('');
+            }
+
+            // Search functionality
+            function filterPlayers(query) {
+                const filtered = players.filter(player => player.name.toLowerCase().includes(query.toLowerCase()));
+                renderPlayers(filtered);
+            }
+
+            // Event listener for search input
+            document.getElementById('search-input').addEventListener('input', (event) => {
+                filterPlayers(event.target.value);
+            });
+
+            // Initial render
+            renderPlayers(players);
+
+            // JavaScript for arrow functionality (Ensure elements exist)
+            const leftArrow = document.querySelector('.arrow-circle.left');
+            const rightArrow = document.querySelector('.arrow-circle.right');
+            if (leftArrow && rightArrow) {
+                leftArrow.addEventListener('click', function() {
+                    document.querySelector('.alumni-cards').scrollBy({ left: -200, behavior: 'smooth' });
+                });
+
+                rightArrow.addEventListener('click', function() {
+                    document.querySelector('.alumni-cards').scrollBy({ left: 200, behavior: 'smooth' });
+                });
+            }
+
+            // JavaScript for mobile menu toggle
+            const menuButton = document.querySelector('.menu-button');
+            if (menuButton) {
+                menuButton.addEventListener('click', function() {
+                    document.querySelector('nav').classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
